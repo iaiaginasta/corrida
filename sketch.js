@@ -5,8 +5,8 @@ var moedaImg;
 function preload(){
     fundoImg = loadImage("path.png");
     meninoImg = loadAnimation("Jake1.png", "Jake2.png", "Jake3.png", "Jake4.PNG","Jake5.png");
-    bombaImg = loadImage(bomb.png);
-    moedaImg = loadImage(coin.png);
+    bombaImg = loadImage("bomb.png");
+    moedaImg = loadImage("coin.png");
 }
 
 function setup(){
@@ -31,16 +31,16 @@ if(fundo.y > 400){
   fundo.y = fundo.height / 4;
 }
 
-var num = Mat.round (random(1,3));
+var num = Math.round(random(1,3));
+
 
 if(frameCount % 100 === 0){
   if(num === 1){
   gerarBomba();
-  }else if (num === 2){
-    gerarMoeda;
+ }else if (num === 2){
+   gerarMoeda();
   }
 }
-
 }
 
 function gerarBomba(){
@@ -55,4 +55,4 @@ function gerarMoeda(){
   moeda.addImage(moedaImg);
   moeda.scale = 0.2;
   moeda.velocityY = 4;
-  }
+ }
